@@ -1,0 +1,228 @@
+Server: 172.16.100.1 / 08:00:27:1a:59:21
+
+##### good_good #####  stable1.pcap
+
+TCP SYN PACKET = 303
+TCP SYN-ACK PACKET = 303
+TCP ACK PACKET = 1818 [~ 303*6]
+TCP HTTP.REQUEST PACKET = 303
+TCP HTTP.RESPONSE PACKET = 303
+
+------ h1: 172.16.100.2 / 08:00:27:49:a6:49 ------
+
+* TCP SYN PACKET COUNT = 76
+ip.src == 172.16.100.2 and tcp.flags.syn == 1 and tcp.flags.ack == 0 and tcp.flags.fin == 0 
+eth.addr == 08:00:27:49:a6:49 and tcp.flags.syn == 1 and tcp.flags.ack == 0 and tcp.flags.fin == 0 
+
+* TCP SYN,ACK PACKET COUNT = 76
+ip.dst == 172.16.100.2 and tcp.flags.syn == 1 and tcp.flags.ack == 1 and tcp.flags.fin == 0 
+eth.addr == 08:00:27:49:a6:49 and tcp.flags.syn == 1 and tcp.flags.ack == 1 and tcp.flags.fin == 0 
+
+* TCP ACK PACKET COUNT = 304/4 = 76
+ip.src == 172.16.100.2 and tcp.flags.syn == 0 and tcp.flags.ack == 1 and tcp.flags.fin == 0
+
+* h1 SOURCE MAC ADDRESS TCP ACK PACKET COUNT = 456/6 = 76
+eth.addr == 08:00:27:49:a6:49 and tcp.flags.syn == 0 and tcp.flags.ack == 1 and tcp.flags.fin == 0
+
+* HTTP PACKET COUNT = 76 
+ip.src == 172.16.100.2 and http.request 
+eth.addr == 08:00:27:49:a6:49 and http.request
+
+
+------ h2: 172.16.100.3 / 08:00:27:81:4a:79 ------
+
+* TCP SYN PACKET COUNT = 227
+ip.src == 172.16.100.3 and tcp.flags.syn == 1 and tcp.flags.ack == 0 and tcp.flags.fin == 0 
+eth.addr == 08:00:27:81:4a:79 and tcp.flags.syn == 1 and tcp.flags.ack == 0 and tcp.flags.fin == 0 
+
+* TCP SYN,ACK PACKET COUNT = 227
+ip.dst == 172.16.100.3 and tcp.flags.syn == 1 and tcp.flags.ack == 1 and tcp.flags.fin == 0 
+eth.addr == 08:00:27:81:4a:79 and tcp.flags.syn == 1 and tcp.flags.ack == 1 and tcp.flags.fin == 0 
+
+* TCP ACK PACKET COUNT = 908/4 = 227
+ip.src == 172.16.100.3 and tcp.flags.syn == 0 and tcp.flags.ack == 1 and tcp.flags.fin == 0
+
+* h2 SOURCE MAC ADDRESS TCP ACK PACKET COUNT = 1362/6 = 227
+eth.addr == 08:00:27:81:4a:79 and tcp.flags.syn == 0 and tcp.flags.ack == 1 and tcp.flags.fin == 0 
+
+* HTTP PACKET COUNT = 227
+ip.src == 172.16.100.3 and http.request 
+eth.addr == 08:00:27:81:4a:79 and http.request
+
+====================================================================================================================================
+
+##### good_hping3 #####  attack1.pcap
+
+------ OVERALL ------
+
+TCP SYN PACKET = 32820
+TCP SYN-ACK PACKET = 107
+TCP ACK PACKET = 645 [~ 107*6]
+TCP HTTP.REQUEST PACKET = 107
+TCP HTTP.RESPONSE PACKET = 107
+
+------ h1: 172.16.100.2 / 08:00:27:49:a6:49 ------
+
+* TCP SYN PACKET COUNT = 107
+ip.src == 172.16.100.2 and tcp.flags.syn == 1 and tcp.flags.ack == 0 and tcp.flags.fin == 0 
+eth.addr == 08:00:27:49:a6:49 and tcp.flags.syn == 1 and tcp.flags.ack == 0 and tcp.flags.fin == 0 
+
+* TCP SYN,ACK PACKET COUNT = 107
+ip.dst == 172.16.100.2 and tcp.flags.syn == 1 and tcp.flags.ack == 1 and tcp.flags.fin == 0 
+eth.addr == 08:00:27:49:a6:49 and tcp.flags.syn == 1 and tcp.flags.ack == 1 and tcp.flags.fin == 0 
+
+* TCP ACK PACKET COUNT = 430/4 = 107
+ip.src == 172.16.100.2 and tcp.flags.syn == 0 and tcp.flags.ack == 1 and tcp.flags.fin == 0
+
+* h1 SOURCE MAC ADDRESS TCP ACK PACKET COUNT = 645/6 = 107
+eth.addr == 08:00:27:49:a6:49 and tcp.flags.syn == 0 and tcp.flags.ack == 1 and tcp.flags.fin == 0
+
+* HTTP REQUEST PACKET COUNT = 107 
+ip.src == 172.16.100.2 and http.request 
+eth.addr == 08:00:27:49:a6:49 and http.request
+
+
+------ h2: 172.16.100.3 / 08:00:27:81:4a:79 ------
+
+* TCP SYN PACKET COUNT = 0
+ip.src == 172.16.100.3 and tcp.flags.syn == 1 and tcp.flags.ack == 0 and tcp.flags.fin == 0 
+
+* h2 SOURCE MAC ADDRESS SYN PACKET COUNT = 32713
+eth.addr == 08:00:27:81:4a:79 and tcp.flags.syn == 1 and tcp.flags.ack == 0 and tcp.flags.fin == 0 
+
+* TCP SYN,ACK PACKET COUNT = 0
+ip.dst == 172.16.100.3 and tcp.flags.syn == 1 and tcp.flags.ack == 1 and tcp.flags.fin == 0 
+eth.addr == 08:00:27:81:4a:79 and tcp.flags.syn == 1 and tcp.flags.ack == 1 and tcp.flags.fin == 0 
+
+* TCP ACK PACKET COUNT = 0
+ip.src == 172.16.100.3 and tcp.flags.syn == 0 and tcp.flags.ack == 1 and tcp.flags.fin == 0
+eth.addr == 08:00:27:81:4a:79 and tcp.flags.syn == 0 and tcp.flags.ack == 1 and tcp.flags.fin == 0
+
+* HTTP REQUEST PACKET COUNT = 0
+ip.src == 172.16.100.3 and http.request 
+eth.addr == 08:00:27:81:4a:79 and http.request
+
+====================================================================================================================================
+
+##### scapy_good #####  attack2.pcap
+
+TCP SYN PACKET = 18193
+TCP SYN-ACK PACKET = 18146
+TCP ACK PACKET = 1956
+TCP HTTP.REQUEST PACKET = 326
+TCP HTTP.RESPONSE PACKET = 326
+
+------ h1: 172.16.100.2 / 08:00:27:49:a6:49 ------
+
+* TCP SYN PACKET COUNT = 17867
+ip.src == 172.16.100.2 and tcp.flags.syn == 1 and tcp.flags.ack == 0 and tcp.flags.fin == 0
+eth.addr == 08:00:27:49:a6:49 and tcp.flags.syn == 1 and tcp.flags.ack == 0 and tcp.flags.fin == 0
+
+* TCP SYN,ACK PACKET COUNT = 17820
+ip.dst == 172.16.100.2 and tcp.flags.syn == 1 and tcp.flags.ack == 1 and tcp.flags.fin == 0
+eth.addr == 08:00:27:49:a6:49 and tcp.flags.syn == 1 and tcp.flags.ack == 1 and tcp.flags.fin == 0
+
+* TCP ACK PACKET COUNT = 0
+ip.src == 172.16.100.2 and tcp.flags.syn == 0 and tcp.flags.ack == 1 and tcp.flags.fin == 0
+eth.addr == 08:00:27:49:a6:49 and tcp.flags.syn == 0 and tcp.flags.ack == 1 and tcp.flags.fin == 0
+
+* HTTP PACKET COUNT = 0 
+ip.src == 172.16.100.2 and http.request 
+eth.addr == 08:00:27:49:a6:49 and http.request
+
+
+------ h2: 172.16.100.3 / 08:00:27:81:4a:79 ------
+
+* TCP SYN PACKET COUNT = 326
+ip.src == 172.16.100.3 and tcp.flags.syn == 1 and tcp.flags.ack == 0 and tcp.flags.fin == 0 
+eth.addr == 08:00:27:81:4a:79 and tcp.flags.syn == 1 and tcp.flags.ack == 0 and tcp.flags.fin == 0 
+
+* TCP SYN,ACK PACKET COUNT = 326
+ip.dst == 172.16.100.3 and tcp.flags.syn == 1 and tcp.flags.ack == 1 and tcp.flags.fin == 0 
+eth.addr == 08:00:27:81:4a:79 and tcp.flags.syn == 1 and tcp.flags.ack == 1 and tcp.flags.fin == 0 
+
+* TCP ACK PACKET COUNT = 1304/4 = 326 
+ip.src == 172.16.100.3 and tcp.flags.syn == 0 and tcp.flags.ack == 1 and tcp.flags.fin == 0
+
+* h2 SOURCE MAC ADDRESS TCP ACK PACKET COUNT = 1956/6 = 326
+eth.addr == 08:00:27:81:4a:79 and tcp.flags.syn == 0 and tcp.flags.ack == 1 and tcp.flags.fin == 0 
+
+* HTTP PACKET COUNT = 326
+ip.src == 172.16.100.3 and http.request 
+eth.addr == 08:00:27:81:4a:79 and http.request
+
+====================================================================================================================================
+
+##### scapy_hping3 #####  attack3.pcap
+
+TCP SYN PACKET = 31191
+TCP SYN-ACK PACKET = 593
+TCP ACK PACKET = 0
+TCP HTTP.REQUEST PACKET = 0
+TCP HTTP.RESPONSE PACKET = 0
+
+------ h1: 172.16.100.2 / 08:00:27:49:a6:49 ------
+
+* TCP SYN PACKET COUNT = 633
+ip.src == 172.16.100.2 and tcp.flags.syn == 1 and tcp.flags.ack == 0 and tcp.flags.fin == 0
+eth.addr == 08:00:27:49:a6:49 and tcp.flags.syn == 1 and tcp.flags.ack == 0 and tcp.flags.fin == 0
+
+* TCP SYN,ACK PACKET COUNT = 593
+ip.dst == 172.16.100.2 and tcp.flags.syn == 1 and tcp.flags.ack == 1 and tcp.flags.fin == 0
+eth.addr == 08:00:27:49:a6:49 and tcp.flags.syn == 1 and tcp.flags.ack == 1 and tcp.flags.fin == 0
+
+* TCP ACK PACKET COUNT = 0
+ip.src == 172.16.100.2 and tcp.flags.syn == 0 and tcp.flags.ack == 1 and tcp.flags.fin == 0
+eth.addr == 08:00:27:49:a6:49 and tcp.flags.syn == 0 and tcp.flags.ack == 1 and tcp.flags.fin == 0
+
+* HTTP PACKET COUNT = 0
+ip.src == 172.16.100.2 and http.request 
+eth.addr == 08:00:27:49:a6:49 and http.request
+
+
+------ h2: 172.16.100.3 / 08:00:27:81:4a:79 ------
+
+* TCP SYN PACKET COUNT = 0
+ip.src == 172.16.100.3 and tcp.flags.syn == 1 and tcp.flags.ack == 0 and tcp.flags.fin == 0 
+
+* h2 SOURCE MAC ADDRESS TCP SYN PACKET COUNT = 30558
+eth.addr == 08:00:27:81:4a:79 and tcp.flags.syn == 1 and tcp.flags.ack == 0 and tcp.flags.fin == 0 
+
+* TCP SYN,ACK PACKET COUNT = 0
+ip.dst == 172.16.100.3 and tcp.flags.syn == 1 and tcp.flags.ack == 1 and tcp.flags.fin == 0 
+eth.addr == 08:00:27:81:4a:79 and tcp.flags.syn == 1 and tcp.flags.ack == 1 and tcp.flags.fin == 0 
+
+* TCP ACK PACKET COUNT = 0 
+ip.src == 172.16.100.3 and tcp.flags.syn == 0 and tcp.flags.ack == 1 and tcp.flags.fin == 0
+eth.addr == 08:00:27:81:4a:79 and tcp.flags.syn == 0 and tcp.flags.ack == 1 and tcp.flags.fin == 0 
+
+* HTTP PACKET COUNT = 0
+ip.src == 172.16.100.3 and http.request 
+eth.addr == 08:00:27:81:4a:79 and http.request
+
+====================================================================================================================================
+
+##### good [h1] #####  stable2.pcap
+
+TCP SYN PACKET = 1001
+TCP SYN-ACK PACKET = 1001
+TCP ACK PACKET = 6006/6 = 1001
+TCP HTTP.REQUEST PACKET = 1001
+TCP HTTP.RESPONSE PACKET = 1001
+
+====================================================================================================================================
+
+##### good [h1] #####  stable2.pcap
+
+TCP SYN PACKET = 7001
+TCP SYN-ACK PACKET = 7001
+TCP ACK PACKET = 42006/6 = 7001
+TCP HTTP.REQUEST PACKET = 7001
+TCP HTTP.RESPONSE PACKET = 7001
+
+====================================================================================================================================
+
+Installing tensorflow on Ubuntu -
+https://www.youtube.com/watch?v=6-eEpq7ChKg
+
+
